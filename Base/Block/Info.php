@@ -9,31 +9,8 @@ class Info extends \Magento\Config\Block\System\Config\Form\Fieldset
 {
 
 
-    public function __construct(
-        \Magento\Backend\Block\Context $context,
-        \Magento\Backend\Model\Auth\Session $authSession,
-        \Magento\Framework\View\Helper\Js $jsHelper,
-        \Magento\Framework\View\LayoutFactory $layoutFactory,
-        \Magento\Cron\Model\ResourceModel\Schedule\CollectionFactory $cronFactory,
-        \Magento\Framework\App\State $appState,
-        array $data = []
-    ) {
-        parent::__construct($context, $authSession, $jsHelper, $data);
 
-        $this->_layoutFactory = $layoutFactory;
-        $this->_scopeConfig   = $context->getScopeConfig();
-        $this->appState = $appState;
-        $this->cronFactory = $cronFactory;
-    }
 
-    /**
-     * Render fieldset html
-     *
-     * @param AbstractElement $element
-     * @return string
-     */
-    public function render(AbstractElement $element)
-    {
         $html = $this->_getHeaderHtml($element);
 
         $html .= $this->_getMagentoMode($element);
