@@ -14,11 +14,6 @@ class Deploy extends AbstractHelper
 {
 
     /**
-     * @var \Magento\Framework\Filesystem\Directory\Write
-     */
-    protected $rootWrite;
-
-    /**
      * @var \Magento\Framework\Filesystem\Directory\Read
      */
     protected $rootRead;
