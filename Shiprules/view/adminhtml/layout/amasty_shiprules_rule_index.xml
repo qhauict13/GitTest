@@ -7,19 +7,7 @@
 
 <layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
     <referenceContainer name="content" label="Root">
-        <block class="Amasty\Shiprules\Block\Adminhtml\Rule" name="adminhtml.amasty.shiprules.rule.grid.container">
-            <block class="Magento\Backend\Block\Widget\Grid" name="adminhtml.amasty.shiprules.rule.grid" as="grid">
-                <arguments>
-                    <argument name="id" xsi:type="string">amasty_shiprules_rule_grid</argument>
-                    <argument name="dataSource" xsi:type="object">Amasty\Shiprules\Model\ResourceModel\Rule\Collection</argument>
-                    <argument name="default_sort" xsi:type="string">pos</argument>
-                    <argument name="default_dir" xsi:type="string">ASC</argument>
-                    <argument name="save_parameters_in_session" xsi:type="string">1</argument>
-                </arguments>
-                <block class="Magento\Backend\Block\Widget\Grid\Massaction" name="adminhtml.amasty.shiprules.rule.grid.massaction" as="grid.massaction">
-                    <arguments>
-                        <argument name="massaction_id_field" xsi:type="string">rule_id</argument>
-                        <argument name="form_field_name" xsi:type="string">rules</argument>
+        <block clas
                         <argument name="use_select_all" xsi:type="string">1</argument>
                         <argument name="options" xsi:type="array">
                             <item name="massActivate" xsi:type="array">
