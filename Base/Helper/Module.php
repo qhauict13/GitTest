@@ -5,6 +5,10 @@
  * @package Amasty_Base
  */
 
+namespace Amasty\Base\Helper;
+
+
+
 class Module extends AbstractHelper
 {
     const EXTENSIONS_PATH = 'ambase_extensions';
