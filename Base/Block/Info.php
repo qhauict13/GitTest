@@ -11,15 +11,6 @@ class Info extends \Magento\Config\Block\System\Config\Form\Fieldset
 
 
 
-        $html = $this->_getHeaderHtml($element);
-
-        $html .= $this->_getMagentoMode($element);
-        $html .= $this->_getCronInfo($element);
-
-        $html .= $this->_getFooterHtml($element);
-
-        return $html;
-    }
 
     /**
      * @return \Magento\Framework\View\Element\BlockInterface
