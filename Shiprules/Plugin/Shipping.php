@@ -16,16 +16,6 @@ class Shipping
     /**
      * @var Validator
      */
-    protected $validator;
-
-    public function __construct(
-        \Amasty\Shiprules\Model\Validator $validator,
-        \Magento\Framework\ObjectManagerInterface $objectManager
-    )
-    {
-        $this->objectManager = $objectManager;
-        $this->validator = $validator;
-    }
 
     public function aroundCollectRates(
         \Magento\Shipping\Model\Shipping $subject,

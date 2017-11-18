@@ -5,16 +5,6 @@
  * @package Amasty_Base
  */
 
-namespace Amasty\Base\Helper;
-
-use Magento\Framework\App\Filesystem\DirectoryList;
-use Magento\Framework\App\Helper\AbstractHelper;
-use \Magento\Framework\Unserialize\Unserialize;
-use Zend\Http\Client\Adapter\Curl as CurlClient;
-use Zend\Uri\Http as HttpUri;
-use Zend\Http\Response as HttpResponse;
-use SimpleXMLElement;
-
 class Module extends AbstractHelper
 {
     const EXTENSIONS_PATH = 'ambase_extensions';
