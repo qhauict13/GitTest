@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright © 2015 Amasty. All rights reserved.
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <amshiprules>
+            <discount>
+                <show_discount>0</show_discount>
+                <old_price_style>text-decoration:line-through</old_price_style>
+                <new_price_style>color:red</new_price_style>
+            </discount>
+        </amshiprules>
+    </default>
+</config>
