@@ -107,74 +107,13 @@ class Extensions extends \Magento\Config\Block\System\Config\Form\Fieldset
         return $this->_fieldRenderer;
     }
 
-    /**
-     * Read info about extension from composer json file
-     * @param $moduleCode
-     * @return mixed
-     * @throws \Magento\Framework\Exception\FileSystemException
-     */
-    protected function _getModuleInfo($moduleCode)
-    {
-        $dir = $this->_moduleReader->getModuleDir('', $moduleCode);
-        $file = $dir . '/composer.json';
 
-        $string = $this->_filesystem->fileGetContents($file);
-        $json = $this->_jsonDecoder->decode($string);
-
-        return $json;
-    }
 
     /**
      * @param $fieldset
      * @param $moduleCode
      * @return string
      */
-    protected function _getFieldHtml($fieldset, $moduleCode)
-    {
-        $module = $this->_getModuleInfo($moduleCode);
-        if(!is_array($module)  ||
-           !array_key_exists('version', $module) ||
-           !array_key_exists('description', $module)
-        ) {
-            return '';
-        }
-
-        $currentVer = $module['version'];
-        $moduleName = $module['description'];
-        $moduleName = $this->_replaceAmastyText($moduleName);
-        $status =
-             '<a target="_blank">
-                <img src="'. $this->getViewFileUrl('Amasty_Base::images/ok.gif') . '" title="' . __("Installed") . '"/>
-             </a>';
-
-        $allExtensions = $this->_moduleHelper->getAllExtensions();
-        if ($allExtensions && isset($allExtensions[$moduleCode])){
-            $ext = [];
-
-            if (is_array($allExtensions[$moduleCode]) && !array_key_exists('name', $allExtensions[$moduleCode])){
-                $ext = end($allExtensions[$moduleCode]);
-            } else {
-                $ext = $allExtensions[$moduleCode];
-            }
-
-            $url     = $ext['url'];
-            $name    = $ext['name'];
-            $name = $this->_replaceAmastyText($name);
-            $lastVer = $ext['version'];
-
-            $moduleName =
-                '<a href="' . $url . '" target="_blank" title="' . $name . '">'
-                    . $name .
-                '</a>';
-
-            if (version_compare($currentVer, $lastVer, '<')) {
-                $status =
-                    '<a href="' . $url . '" target="_blank">
-                        <img src="' . $this->getViewFileUrl('Amasty_Base::images/update.gif') .
-                            '" alt="' . __("Update available") . '" title="'. __("Update available")
-                    .'"/></a>';
-            }
-        }
 
         // in case if module output disabled
         if ($this->_scopeConfig->getValue('advanced/modules_disable_output/' . $moduleCode)) {

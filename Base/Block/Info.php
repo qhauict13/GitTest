@@ -12,18 +12,7 @@ use Magento\Framework\Json\DecoderInterface;
 
 class Info extends \Magento\Config\Block\System\Config\Form\Fieldset
 {
-    /**
-     * @var \Magento\Framework\View\LayoutFactory
-     */
-    protected $_layoutFactory;
-    /**
-     * @var \Magento\Framework\App\State
-     */
-    protected $appState;
-    /**
-     * @var \Magento\Cron\Model\ResourceModel\Schedule\CollectionFactory
-     */
-    protected $cronFactory;
+
 
     public function __construct(
         \Magento\Backend\Block\Context $context,
